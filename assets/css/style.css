@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     padding: 0 5%;
-    background-image: linear-gradient(rgba(176, 164, 223, 0.5) ,rgba(176, 164, 223, 0.5));
+  
 }
 
 
@@ -47,7 +47,6 @@ ul li{
     display: inline-block;
     list-style: none;
     margin-left: 50px;
-    background: rgb(201, 199, 199);
     border-radius: 30px;
     padding: 3px 5px;
     
@@ -64,13 +63,13 @@ ul li:hover{
 ul li a {
     text-decoration: none;
     font-size: 15px;
-    font-weight: 600;
-    color: rgb(47, 48, 50);
+    font-weight: 800;
+    color: rgb(200, 200, 229);
     
 }
 
 ul li a:hover {
-    color: rgb(250, 250, 250);
+    color: rgb(87, 83, 83);
     
 }
 
@@ -85,22 +84,29 @@ ul li a:hover {
     font-size: 120px;
     color: aliceblue;
     font-weight: 700;
+    transition: 0.3s;
+}
+
+.middle-con h1:hover{
+    -webkit-text-stroke: 2px #fff;
+    color: transparent;
 }
 
 
 /* button */
 .btn{
-    width: 30%;
+    width: 25%;
     height: 40px;
     border: none;
-    background: rgb(95, 15, 64);
+    /* background: rgb(95, 15, 64); */
+    background: transparent;
     border-radius: 20px;  
     border: 2px solid #fff; 
 
 }
 
 .btn:hover{
-    background: #fff;
+    background: transparent;
     transform: scale(0.9);
     transition: 0.4s;
     border: 2px solid black; 
@@ -117,6 +123,29 @@ ul li a:hover {
 
 .btn a:hover{
     color: black;
+}
+
+
+/* video */
+.video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+}
+
+@media (min-aspect-ratio:16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio:16/9){
+    .back-video{
+        width: auto;
+        height: 100%;
+    }
 }
 
 

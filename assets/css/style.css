@@ -75,6 +75,50 @@ ul li a:hover {
 }
 
 
+/* middle-con */
+.middle-con{
+    text-align: center;
+}
+
+
+.middle-con h1{
+    font-size: 120px;
+    color: aliceblue;
+    font-weight: 700;
+}
+
+
+/* button */
+.btn{
+    width: 30%;
+    height: 40px;
+    border: none;
+    background: rgb(95, 15, 64);
+    border-radius: 20px;  
+    border: 2px solid #fff; 
+
+}
+
+.btn:hover{
+    background: #fff;
+    transform: scale(0.9);
+    transition: 0.4s;
+    border: 2px solid black; 
+}
+
+/* middle-con a */
+.btn a{
+    text-decoration: none; 
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    
+}
+
+.btn a:hover{
+    color: black;
+}
+
 
 
 

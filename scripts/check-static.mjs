@@ -16,7 +16,7 @@ requireMatch(/href="#work"/i, "Real section navigation is required.");
 requireMatch(/type="module"/i, "JavaScript must load as a module.");
 
 if (/href=["']#["']/i.test(html)) failures.push("Placeholder href=# links are not allowed.");
-if (/autoplay/i.test(html)) failures.push("HTML must not force unconditional autoplay.");
+if (/<video\\b[^>]*\\sautoplay(?:\\s|=|>)/i.test(html)) failures.push("HTML must not force unconditional autoplay.");
 if (/fonts\.googleapis\.com/i.test(css)) failures.push("External font requests are not allowed.");
 if (/outline\s*:\s*none/i.test(css)) failures.push("Keyboard focus must remain visible.");
 

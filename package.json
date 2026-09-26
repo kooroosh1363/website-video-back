@@ -1,0 +1,14 @@
+{
+  "name": "motionframe-video-hero",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node --check assets/js/media-policy.js && node --check assets/js/main.js",
+    "test": "node --test",
+    "static-check": "node scripts/check-static.mjs",
+    "asset-check": "node scripts/check-assets.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "npm run lint && npm test && npm run static-check && npm run asset-check && npm run build"
+  }
+}

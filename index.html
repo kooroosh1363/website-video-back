@@ -1,35 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>website video background</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MotionFrame is a performance-aware cinematic landing page that conditionally loads background video and preserves an accessible fallback experience.">
+  <meta name="color-scheme" content="light dark">
+  <title>MotionFrame — Performance-Aware Video Hero</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <script type="module" src="./assets/js/main.js"></script>
 </head>
 <body>
-    <div class="main">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-        <video autoplay muted loop plays-inline class="video">
-            <source src="./assets/video/ink.mp4" type="video/mp4">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="MotionFrame home">
+      <span class="brand-mark">MF</span>
+      <span>MotionFrame</span>
+    </a>
+
+    <nav aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section id="top" class="hero" data-hero>
+      <div class="hero-media" aria-hidden="true">
+        <img
+          class="hero-poster"
+          src="./assets/img/ambient-poster.jpg"
+          width="320"
+          height="180"
+          alt=""
+        >
+        <video
+          class="hero-video"
+          data-bg-video
+          muted
+          loop
+          playsinline
+          preload="none"
+          poster="./assets/img/ambient-poster.jpg"
+        >
+          <source data-src="./assets/video/ambient.mp4" type="video/mp4">
         </video>
+      </div>
 
-        <nav class="nav-bar">
-            <img src="./assets/img/trans-back-raad.png" alt="logo" class="img-logo">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT ME</a></li>
-                <li><a href="#">BLOG</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
-        <div class="middle-con">
-            <h1>WEB DVELOPPER</h1>
-            <button class="btn">
-                <a href="#">GET ACCESS</a>
-            </button>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Cinematic web / performance-aware delivery</p>
+        <h1>Motion without forcing every visitor to download it.</h1>
+        <p class="hero-copy">
+          A video-first landing page that respects reduced-motion preferences,
+          data-saving connections, keyboard users, and asset budgets.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-link" href="#work">See the system</a>
+          <button class="video-toggle" type="button" data-video-toggle aria-pressed="false">
+            <span class="toggle-dot" aria-hidden="true"></span>
+            <span data-video-toggle-label>Loading background video</span>
+          </button>
         </div>
-    </div>
-    
+
+        <dl class="hero-metrics">
+          <div><dt>Legacy video</dt><dd>36.2 MB</dd></div>
+          <div><dt>Current video</dt><dd>&lt; 5 KB</dd></div>
+          <div><dt>Runtime deps</dt><dd>0</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="work" class="content-section">
+      <div class="section-heading">
+        <p class="section-index">01 / Delivery</p>
+        <h2>Progressive media instead of unconditional autoplay.</h2>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <span>Motion policy</span>
+          <h3>Respect user preferences</h3>
+          <p>Reduced-motion users stay on the poster/fallback layer and never need the looping video.</p>
+        </article>
+        <article>
+          <span>Network policy</span>
+          <h3>Skip video on constrained connections</h3>
+          <p>Save-Data and very slow effective connection types prevent the optional video request.</p>
+        </article>
+        <article>
+          <span>Control</span>
+          <h3>Pause is always available</h3>
+          <p>The background is decorative, muted, and paired with an explicit accessible play/pause control.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="approach" class="content-section content-section--contrast">
+      <div class="section-heading">
+        <p class="section-index">02 / Engineering</p>
+        <h2>The fallback is the product too.</h2>
+      </div>
+      <div class="approach-grid">
+        <p>
+          The page is fully readable before video loads. The poster and CSS treatment carry the composition,
+          so motion enhances the experience rather than becoming a dependency.
+        </p>
+        <ul>
+          <li>semantic navigation and real anchors</li>
+          <li>no external font request</li>
+          <li>no autoplay when reduced motion is requested</li>
+          <li>no video request when Save-Data is active</li>
+          <li>testable media-loading policy</li>
+          <li>asset-budget checks in CI</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section">
+      <div class="contact-card">
+        <p class="section-index">03 / Boundary</p>
+        <h2>Static demo. Production-minded decisions.</h2>
+        <p>
+          This project demonstrates delivery strategy and interaction design. It does not include analytics,
+          forms, authentication, or backend services.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>MotionFrame</span>
+    <span>Framework-free cinematic landing page</span>
+  </footer>
 </body>
 </html>
